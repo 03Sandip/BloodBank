@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel='icon' href='images/favicon.ico' type='image/x-icon' sizes="16x16" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Patua+One&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Luckiest+Guy&family=Montserrat:wght@500&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="css/minified-index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <title>Blood Bank</title>
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="d-flex container-fluid bg-dark justify-content-end pe-4">
+            <ul class="social-footer2 pe-2">
+                <li class=""><a title="youtube" target="_blank" href="#"><img alt="youtube" width="25" height="25"
+                            src="./images/youtube_icon.png"></a>
+                </li>
+                <li class=""><a href="#" target="_blank" title="Facebook"><img alt="Facebook" width="25" height="25"
+                            src="./images/facebook_icon.png"></a>
+                </li>
+                <li class=""><a href="#" target="_blank" title="Twitter"><img alt="Twitter" width="25" height="25"
+                            src="./images/twitter_icon.png"></a>
+                </li>
+                <li class=""><a title="instagram" target="_blank" href="#"><img alt="instagram" width="25" height="25"
+                            src="./images/instagram_icon.png"></a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="container-fluid py-3 px-4 bg-light">
+            <div class="d-flex flex-wrap justify-content-center">
+                <a href="/" class="mb-2 mb-lg-0 text-black text-decoration-none">
+                    <img class="bi me-2" width="185" height="40" src="images/logo.png" alt="">
+                </a>
+
+                <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0 fw-bolder">
+                    <li><a href="./index.html" class="nav-link px-2 text-black">Home</a></li>
+                    <li><a href="articles/why-donate-blood.html" class="nav-link px-2 text-black">Why Donate Blood?</a>
+                    </li>
+                    <li><a href="#" class="nav-link px-2 text-black">Refer A Friend</a></li>
+                    <li><a href="#" class="nav-link px-2 text-black">About</a></li>
+                </ul>
+
+                <div class="text-end">
+                    <a class="btn btn-danger fw-bolder" href="login.html" target="_blank">Login</a>
+                    <a class="btn btn-danger fw-bolder" href="signup.html" target="_blank">Sign Up</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Section  -->
+    <div class="sec1 container-fluid">
+        <div>
+            <p class="display-7">Donate to blood contribute</p>
+        </div>
+        <div>
+            <h2 class="display-2">Your Blood Can Bring Smile <br> In Any One Person Face</h2>
+        </div><br>
+        <div><button type="button" class="btn btn-danger">Get Started</button></div><br>
+    </div>
+
+    <!-- Find A Donor -->
+    <div class="sec2 container-fluid py-5">
+        <div class="row d-flex align-items-center justify-content-center">
+            <div class="col-xs-4 col-sm-6 col-md-4 mx-1 d-grid gap-3 py-4 bcard">
+                <p class="fs-2 fw-bolder text-center hstyle">Find A Donor</p>
+
+                <div class="form-floating">
+                    <select id="get_states" onclick="getStates()" class="form-select" id="floatingSelect"
+                        aria-label="Floating label select example">
+                        <option selected>Select Your State</option>
+
+                    </select>
+                    <label for="floatingSelect">State</label>
+                </div>
+
+                <div class="form-floating">
+                    <select class="form-select" id="floatingSelect" aria-label="Floating label select example">
+                        <option selected>Open this select menu</option>
+                        <option value="1">One</option>
+                        <option value="2">Two</option>
+                        <option value="3">Three</option>
+                    </select>
+                    <label for="floatingSelect">City</label>
+                </div>
+
+                <div class="form-floating">
+                    <select class="form-select" id="floatingSelect" aria-label="Floating label select example">
+                        <option selected>Open this select menu</option>
+                        <option value="1">One</option>
+                        <option value="2">Two</option>
+                        <option value="3">Three</option>
+                    </select>
+                    <label for="floatingSelect">Area</label>
+                </div>
+
+                <div class="form-floating">
+                    <select id="blood_group" onclick="getBloodGroup()" class="form-select" id="floatingSelect"
+                        aria-label="Floating label select example">
+                        <option selected>Open this select menu</option>
+                    </select>
+                    <label for="floatingSelect">Group</label>
+                </div>
+
+                <button type="button" class="btn btn-danger">Search</button>
+            </div>
+
+            <div class="col-xs-7 col-sm-6 col-md-7 mx-1 py-4">
+                <div
+                    class="d-flex flex-wrap align-items-center justify-content-center embed-responsive embed-responsive-4by3 bcard">
+                    <iframe width="1044" height="414" src="https://www.youtube.com/embed/gYUcQT6Gxts"
+                        title="YouTube video player" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- How Blood Donation Works -->
+    <section class="sec5 py-5">
+        <div class="container-fluid d-flex flex-wrap justify-content-center">
+            <div class="row">
+                <div class="col text-center">
+                    <h2 class="fs-1 fw-bolder hstyle text-danger">Keep Donating Blood</h2>
+                    <p class="lead text-black fw-bolder">Blood is one of the most essential fluids of our body that
+                        helps in the smooth
+                        functioning
+                        of our body.</p>
+                </div>
+            </div>
+
+            <div class="row d-flex align-items-center justify-content-center">
+                <div class="col-auto">
+                    <div class="card" style="width: 22rem;">
+                        <img class="card-img-top p-3" src="./images/blood-donation-1.png" alt="Card image cap">
+                        <div class="card-body text-center">
+                            <h5 class="card-title text-black fw-bolder">Be A Real Hero</h5>
+                            <p class="card-text text-black">There is nothing better than saving a life Be a hero, Read
+                                Blood
+                                Donation Facts.</p>
+                            <a href="./articles/why-donate-blood.html" class="btn1 btn btn-dark">Read More</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-auto">
+                    <div class="card" style="width: 22rem;">
+                        <img class="card-img-top p-3" src="./images/blood-donation-2.png" alt="Card image cap">
+                        <div class="card-body text-center">
+                            <h5 class="card-title text-black fw-bolder">It's Cost Free</h5>
+                            <p class="card-text text-black">It Costs Nothing Give blood and stay healthy, Read Blood
+                                Donation Facts.
+                            </p>
+                            <a href="./articles/why-donate-blood.html" target="_blank" class="btn1 btn btn-danger">Read
+                                More</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-auto">
+                    <div class="card" style="width: 22rem;">
+                        <img class="card-img-top p-3" src="./images/blood-donation-3.png" alt="Card image cap">
+                        <div class="card-body text-center">
+                            <h5 class="card-title text-black fw-bolder">Utilize Your Time</h5>
+                            <p class="card-text text-black">It Takes Only an Hour Donate blood save lives! Read Blood
+                                Donation Facts.
+                            </p>
+                            <a href="./articles/why-donate-blood.html" target="_blank" class="btn1 btn btn-dark">Read
+                                More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- Blood Donation Process -->
+    <section class="sec3 py-5">
+        <div class="py-4">
+            <p class="fs-6 m-0 text-danger fw-bolder text-center">WHAT WE DO</p>
+            <p class="fs-1 text-center fw-bold hstyle pb-4">Blood Donation Process</p>
+        </div>
+
+        <div class="container d-flex flex-wrap justify-content-center">
+            <div class="row">
+                <div class="col col-sm-6">
+                    <img src="./images/service1.jpg" alt="..." class="img-thumbnail">
+                </div>
+
+                <div class="col col-sm-6 align-self-center">
+                    <p class="display-2 fw-bolder text-secondary">01</p>
+                    <p class="h1 py-1">Register</p>
+                    <p class="h5 py-1 text-muted">Donor fills up the registration form and gives his consent for
+                        donation.
+                        You'll be asked to show ID, such as your driver's license. Click <a href="#">Here</a> to
+                        Register Now.</p>
+                    <a href="./articles/why-donate-blood.html" target="_blank"
+                        class="btn btn-danger fw-bolder py-3 px-5 mt-3">Read More</a>
+
+                </div>
+                <div class="w-100"></div>
+                <br>
+
+                <div class="col col-sm-6 align-self-center text-end">
+                    <p class="display-2 fw-bolder text-secondary">02</p>
+                    <p class="h1 py-1">Medical CheckUp</p>
+                    <p class="h5 py-1 text-muted">You'll also get a short health exam or
+                        “mini-physical.” An employee will take your pulse, blood pressure, and temperature, and take a
+                        small amount of blood for testing.</p>
+                    <a href="./articles/why-donate-blood.html" target="_blank"
+                        class="btn btn-danger fw-bolder py-3 px-5 mt-3">Read More</a>
+                </div>
+
+                <div class="col col-sm-6">
+                    <img src="./images/service2.png" alt="..." class="img-thumbnail">
+                </div>
+
+                <div class="w-100"></div>
+                <br>
+
+                <div class="col col-sm-6">
+                    <img src="./images/service3.png" alt="..." class="img-thumbnail">
+                </div>
+
+                <div class="col col-sm-6 align-self-center">
+                    <p class="display-2 fw-bolder text-secondary">03</p>
+                    <p class="h1 py-1">Blood Donation</p>
+                    <p class="h5 py-1 text-muted">Phlebotomist draws unit (350ml/450ml) of blood. A new sterile meedle
+                        is
+                        used to draw each unit and the needle is destroyed after it has been used.</p>
+                    <a href="./articles/why-donate-blood.html" target="_blank"
+                        class="btn btn-danger fw-bolder py-3 px-5 mt-3">Read More</a>
+                </div>
+
+                <div class="w-100"></div>
+                <br>
+
+                <div class="col col-sm-6 align-self-center text-end">
+                    <p class="display-2 fw-bolder text-secondary">04</p>
+                    <p class="h1 py-1">Refreshments</p>
+                    <p class="h5 py-1 text-muted">Your body needs folic acid to produce new red blood cells. After blood
+                        donation, eat foods rich in folic acid, so that your body can produce new blood cells
+                        quickly.</p>
+                    <a href="./articles/why-donate-blood.html" target="_blank"
+                        class="btn btn-danger fw-bolder py-3 px-5 mt-3">Read More</a>
+                </div>
+
+                <div class="col col-sm-6 pb-5">
+                    <img src="./images/service4.png" alt="..." class="img-thumbnail">
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <div class="container-fluid py-4 sec4">
+
+        <div class="row d-flex flex-wrap align-items-center justify-content-center">
+            <div class="col-xs-7 col-sm-12 col-md-6 border-end">
+                <h2 class="fs-2 text-center fw-bold hstyle">Criteria / Conditions for Blood Donation</h2>
+                &nbsp;
+
+                <table class="table table-striped">
+                    <tbody>
+                        <tr>
+                            <th>Frequency</th>
+                            <td>Once in three months</td>
+                        </tr>
+                        <tr>
+                            <th>Age:&nbsp;</th>
+                            <td>18 - 60 years</td>
+                        </tr>
+                        <tr>
+                            <th>Body Weight</th>
+                            <td>Above 45 kgs</td>
+                        </tr>
+                        <tr>
+                            <th>Temperature and pulse</th>
+                            <td>
+                                <p>Normal</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>Blood pressure</th>
+                            <td>Within normal limits without medication</td>
+                        </tr>
+                        <tr>
+                            <th>Hemoglobin</th>
+                            <td>More than12 gms/dl for men and 12.5 gms/dl for women</td>
+                        </tr>
+                        <tr>
+                            <th>Diseases</th>
+                            <td>
+                                <p>You shall be free from any acute respiratory disease, skin infections and diseases
+                                    transmissible by blood transfusion</p>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+
+
+            <div class="col-xs-7 col-sm-12 col-md-6 border-start">
+                <p class="fs-2 text-center fw-bold hstyle">Compatible Blood Type Donors</p>
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th scope="col">Blood Type</th>
+                            <th scope="col">Donate Blood To</th>
+                            <th scope="col">Recieve Blood From</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><b>A+</b></td>
+                            <td>A+ AB+</td>
+                            <td>A+ A- O+ O-</td>
+                        </tr>
+                        <tr>
+                            <td><b>O+</b></td>
+                            <td>O+ A+ B+ AB+</td>
+                            <td>O+ O-</td>
+                        </tr>
+                        <tr>
+                            <td><b>B+</b></td>
+                            <td>B+ AB+</td>
+                            <td>B+ B- O+ O-</td>
+                        </tr>
+                        <tr>
+                            <td><b>AB+</b></td>
+                            <td>AB+</td>
+                            <td>Everyone</td>
+                        </tr>
+                        <tr>
+                            <td><b>A-</b></td>
+                            <td>A+ A- AB+ AB-</td>
+                            <td>A- O-</td>
+                        </tr>
+                        <tr>
+                            <td><b>O-</b></td>
+                            <td>Everyone</td>
+                            <td>O-</td>
+                        </tr>
+                        <tr>
+                            <td><b>B-</b></td>
+                            <td>B+ B- AB+ AB-</td>
+                            <td>B- O-</td>
+                        </tr>
+                        <tr>
+                            <td><b>AB-</b></td>
+                            <td>AB+ AB-</td>
+                            <td>AB- A- B- O-</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid sec-newsletter">
+        <section class="newsletter">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="content">
+                            <form>
+                                <h2>SUBSCRIBE TO OUR NEWSLETTER</h2>
+                                <div class="input-group">
+                                    <input type="email" class="form-control" placeholder="Enter your email">
+                                    <span class="input-group-btn">
+                                        <button class="btn" type="submit">Subscribe Now</button>
+                                    </span>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+
+    <footer id="footer" class="footer-1">
+        <div class="main-footer widgets-dark typo-light">
+            <div class="container mt-3 d-flex flex-wrap align-items-center justify-content-center ">
+                <div class="row">
+
+                    <div class="col-xs-12 col-sm-6 col-md-3">
+                        <div class=" widget subscribe no-box align-items-center">
+                            <div class="mb-3"><a href="/" class="">
+                                    <img class="bi me-2" width="170" height="40" src="images/logo.png" alt="">
+                                </a></div>
+                            <div>
+                                <p>A blood bank is a center where blood gathered as a result of blood donation is stored
+                                    and preserved for later use in blood transfusion. The term "blood bank" typically
+                                    refers to a division of a hospital where the storage of blood product occurs and
+                                    where proper testing is performed.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-xs-12 col-sm-6 col-md-3">
+                        <div class="ms-5 widget no-box">
+                            <h5 class="widget-title">Quick Links<span></span></h5>
+                            <ul class="thumbnail-widget">
+                                <li>
+                                    <div class="thumb-content"><a href="#.">Get Started</a></div>
+                                </li>
+                                <li>
+                                    <div class="thumb-content"><a href="articles/why-donate-blood.html">Why Donate
+                                            Blood?</a></div>
+                                </li>
+                                <li>
+                                    <div class="thumb-content"><a href="articles/types-of-blood-donation.html">Types Of
+                                            Blood Donation</a></div>
+                                </li>
+                                <li>
+                                    <div class="thumb-content"><a href="#.">Benifits Of Blood Donation</a></div>
+                                </li>
+                                <li>
+                                    <div class="thumb-content"><a href="#.">About</a></div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="col-xs-12 col-sm-6 col-md-3">
+                        <div class="widget no-box">
+                            <h5 class="widget-title">Get Started<span></span></h5>
+                            <p>You can book an appointment to give blood as soon as you register as a blood donor.
+                                However, the next convenient appointment might not be straightaway.</p>
+                            <a class="btn btn-danger" href="login.html" target="_blank">Login</a>
+                            <a class="btn btn-danger" href="signup.html" target="_blank">Sign Up</a>
+                        </div>
+                    </div>
+
+                    <div class="col-xs-12 col-sm-6 col-md-3">
+
+                        <div class="ms-5 widget no-box">
+                            <h5 class="widget-title">Contact Us<span></span></h5>
+
+                            <p><a href="mailto:info@domain.com" title="glorythemes">info@domain.com</a></p>
+                            <ul class="social-footer2 pe-2">
+                                <li class=""><a title="youtube" target="_blank" href="#"><img alt="youtube" width="25"
+                                            height="25" src="./images/youtube_icon.png"></a>
+                                </li>
+                                <li class=""><a href="#" target="_blank" title="Facebook"><img alt="Facebook" width="25"
+                                            height="25" src="./images/facebook_icon.png"></a>
+                                </li>
+                                <li class=""><a href="#" target="_blank" title="Twitter"><img alt="Twitter" width="25"
+                                            height="25" src="./images/twitter_icon.png"></a>
+                                </li>
+                                <li class=""><a title="instagram" target="_blank" href="#"><img alt="instagram"
+                                            width="25" height="25" src="./images/instagram_icon.png"></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-copyright">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 text-center">
+                        <p>Copyright Company Name © 2022. All rights reserved.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script type="text/javascript" src="./script/script.js"></script>
+
+
+</body>
+
+</html>
