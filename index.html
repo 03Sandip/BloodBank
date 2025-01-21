@@ -19,7 +19,7 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Luckiest+Guy&family=Montserrat:wght@500&display=swap"
         rel="stylesheet">
-
+    
     <link rel="stylesheet" href="css/minified-index.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
     <title>Blood Bank</title>
@@ -29,37 +29,19 @@
 
     <!-- Header -->
     <header>
-        <div class="d-flex container-fluid bg-dark justify-content-end pe-4">
-            <ul class="social-footer2 pe-2">
-                <li class=""><a title="youtube" target="_blank" href="#"><img alt="youtube" width="25" height="25"
-                            src="./images/youtube_icon.png"></a>
-                </li>
-                <li class=""><a href="#" target="_blank" title="Facebook"><img alt="Facebook" width="25" height="25"
-                            src="./images/facebook_icon.png"></a>
-                </li>
-                <li class=""><a href="#" target="_blank" title="Twitter"><img alt="Twitter" width="25" height="25"
-                            src="./images/twitter_icon.png"></a>
-                </li>
-                <li class=""><a title="instagram" target="_blank" href="#"><img alt="instagram" width="25" height="25"
-                            src="./images/instagram_icon.png"></a>
-                </li>
-            </ul>
-        </div>
-
         <div class="container-fluid py-3 px-4 bg-light">
             <div class="d-flex flex-wrap justify-content-center">
                 <a href="/" class="mb-2 mb-lg-0 text-black text-decoration-none">
                     <img class="bi me-2" width="185" height="40" src="images/logo.png" alt="">
                 </a>
-
+    
                 <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0 fw-bolder">
                     <li><a href="./index.html" class="nav-link px-2 text-black">Home</a></li>
-                    <li><a href="articles/why-donate-blood.html" class="nav-link px-2 text-black">Why Donate Blood?</a>
-                    </li>
-                    <li><a href="#" class="nav-link px-2 text-black">Refer A Friend</a></li>
+                    <li><a href="articles/why-donate-blood.html" class="nav-link px-2 text-black">Why Donate Blood?</a></li>
+                    <li><a href="#" class="nav-link px-2 text-black" id="referBtn">Refer A Friend</a></li>
                     <li><a href="#" class="nav-link px-2 text-black">About</a></li>
                 </ul>
-
+    
                 <div class="text-end">
                     <a class="btn btn-danger fw-bolder" href="login.html" target="_blank">Login</a>
                     <a class="btn btn-danger fw-bolder" href="signup.html" target="_blank">Sign Up</a>
@@ -67,6 +49,19 @@
             </div>
         </div>
     </header>
+    
+    <!-- Popup Modal -->
+    <div id="popup" class="popup">
+        <div class="popup-content">
+            <span class="close">&times;</span>
+            <h3>Refer A Friend</h3>
+            <p>Enter your friend's email or phone number to invite them:</p>
+            <form id="referForm">
+                <input type="text" id="contactInput" placeholder="Email or Phone Number" required>
+                <button type="submit" class="btn btn-danger">Send Invite</button>
+            </form>
+        </div>
+    </div>
 
     <!-- Section  -->
     <div class="sec1 container-fluid">
@@ -79,55 +74,60 @@
         <div><button type="button" class="btn btn-danger">Get Started</button></div><br>
     </div>
 
+    <section>
+        <link rel="stylesheet" href="css/index.css">
+        <div class="stats-container">
+            <div class="stat">
+                <div class="stat-icon">❤️</div>
+                <div class="stat-number" data-target="2578">0</div>
+                <div class="stat-text">SUCCESS SMILE</div>
+            </div>
+            <div class="stat">
+                <div class="stat-icon">👩‍⚕️</div>
+                <div class="stat-number" data-target="3235">0</div>
+                <div class="stat-text">HAPPY DONORS</div>
+            </div>
+            <div class="stat">
+                <div class="stat-icon">👨‍👩‍👧‍👦</div>
+                <div class="stat-number" data-target="3568">0</div>
+                <div class="stat-text">HAPPY RECIPIENT</div>
+            </div>
+        </div>        
+    </section>
     <!-- Find A Donor -->
     <div class="sec2 container-fluid py-5">
         <div class="row d-flex align-items-center justify-content-center">
             <div class="col-xs-4 col-sm-6 col-md-4 mx-1 d-grid gap-3 py-4 bcard">
                 <p class="fs-2 fw-bolder text-center hstyle">Find A Donor</p>
-
+    
                 <div class="form-floating">
-                    <select id="get_states" onclick="getStates()" class="form-select" id="floatingSelect"
-                        aria-label="Floating label select example">
+                    <select id="get_states" class="form-select">
                         <option selected>Select Your State</option>
-
                     </select>
-                    <label for="floatingSelect">State</label>
+                    <label for="get_states">State</label>
                 </div>
-
+    
                 <div class="form-floating">
-                    <select class="form-select" id="floatingSelect" aria-label="Floating label select example">
-                        <option selected>Open this select menu</option>
-                        <option value="1">One</option>
-                        <option value="2">Two</option>
-                        <option value="3">Three</option>
+                    <select id="get_cities" class="form-select">
+                        <option selected>Select Your City</option>
                     </select>
-                    <label for="floatingSelect">City</label>
+                    <label for="get_cities">City</label>
                 </div>
-
+    
                 <div class="form-floating">
-                    <select class="form-select" id="floatingSelect" aria-label="Floating label select example">
-                        <option selected>Open this select menu</option>
-                        <option value="1">One</option>
-                        <option value="2">Two</option>
-                        <option value="3">Three</option>
+                    <select id="blood_group" class="form-select">
+                        <option selected>Select Blood Group</option>
                     </select>
-                    <label for="floatingSelect">Area</label>
+                    <label for="blood_group">Group</label>
                 </div>
-
-                <div class="form-floating">
-                    <select id="blood_group" onclick="getBloodGroup()" class="form-select" id="floatingSelect"
-                        aria-label="Floating label select example">
-                        <option selected>Open this select menu</option>
-                    </select>
-                    <label for="floatingSelect">Group</label>
-                </div>
-
-                <button type="button" class="btn btn-danger">Search</button>
+    
+                <button type="button" class="btn btn-danger" onclick="searchDonors()">Search</button>
+    
+                <div id="donorResults" class="mt-3"></div>
             </div>
-
+    
             <div class="col-xs-7 col-sm-6 col-md-7 mx-1 py-4">
-                <div
-                    class="d-flex flex-wrap align-items-center justify-content-center embed-responsive embed-responsive-4by3 bcard">
+                <div class="d-flex flex-wrap align-items-center justify-content-center embed-responsive embed-responsive-4by3 bcard">
                     <iframe width="1044" height="414" src="https://www.youtube.com/embed/gYUcQT6Gxts"
                         title="YouTube video player" frameborder="0"
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -136,6 +136,7 @@
             </div>
         </div>
     </div>
+    
 
     <!-- How Blood Donation Works -->
     <section class="sec5 py-5">
